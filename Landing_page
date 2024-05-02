@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4169e1;    
+    background-image: url('https://th.bing.com/th/id/OIP.XxWIYjc9nRlxjCpD7YiOEgHaFj?w=215&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color:#4169e1 ;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav {
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICC T20 World Cup 2024 Ticket Booking</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1><marquee direction="right" >ICC T20 World Cup 2024 Ticket Booking</marquee></h1>
+       <p align="center"><img src="https://th.bing.com/th/id/OIP.XxWIYjc9nRlxjCpD7YiOEgHaFj?w=202&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7" alt="T20" width="100px" height="100px"></p>        
+</header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tickets">Tickets</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h2>About ICC T20 World Cup 2024</h2>
+        <p>Get ready for the largest-ever T20 World Cup with 55 matches across 9 venues in the West Indies and the USA.</p>
+        <p>For more news and information click</p>
+         <div id="link-containerss"></div>  
+</section>
+    <section id="tickets">
+        <h2>Tickets</h2>
+        <p>Tickets start at $6. Purchase your tickets at tickets.t20worldcup.com. or by clicking below</p>
+		<div id="link-containers"></div>
+    </section>
+    <section id="schedule">
+        <h2>Match Schedule</h2>
+        <p>Check out the full schedule of matches and plan your attendance by clicking below</p>
+		<div id="link-container"></div>
+       
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For any inquiries or assistance, email us at tickets@t20worldcup.com.</p>
+<p>click below for full contact details</p>
+<div id="link-containersss"></div>
+    </section>
+    <footer>
+        <p>&copy; 2024 ICC T20 World Cup. All rights reserved.</p>
+    </footer>
+			
+
+
+<script>
+    
+    var scheduleLink = document.createElement('a');
+    scheduleLink.setAttribute('href', 'https://www.icc-cricket.com/tournaments/t20cricketworldcup/matches');
+    scheduleLink.setAttribute('target', '_blank');
+    scheduleLink.textContent = 'SCHEDULE';
+    scheduleLink.style.color = 'black';
+    
+    document.getElementById('link-container').appendChild(scheduleLink);
+
+    
+    var ticketsLink = document.createElement('a');
+    ticketsLink.setAttribute('href', 'https://tickets.t20worldcup.com/selection/event/date?productId=10228971678917');
+    ticketsLink.setAttribute('target', '_blank');
+    ticketsLink.textContent = 'TICKETS';
+    ticketsLink.style.color = 'black';
+
+    document.getElementById('link-containers').appendChild(ticketsLink);
+
+
+    var newsLink = document.createElement('a');
+    newsLink.setAttribute('href', 'https://www.icc-cricket.com/tournaments/t20cricketworldcup/news');
+    newsLink.setAttribute('target', '_blank');
+    newsLink.textContent = 'MORE NEWS';
+    newsLink.style.color = 'black';
+
+    document.getElementById('link-containerss').appendChild(newsLink);
+
+
+     var conLink = document.createElement('a');
+    conLink.setAttribute('href', 'https://www.icc-cricket.com/about/contact-us/icc-contact-details');
+    conLink.setAttribute('target', '_blank');
+    conLink.textContent = 'contact_us';
+    conLink.style.color = 'black';
+
+    document.getElementById('link-containersss').appendChild(conLink);
+</script>
+
+</body>
+
+</html>
