@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4169e1;    
+    background-image: url('https://th.bing.com/th/id/OIP.XxWIYjc9nRlxjCpD7YiOEgHaFj?w=215&h=180&c=7&r=0&o=5&dpr=1.4&pid=1.7');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color:paleblue ;
+    color: #fff;
+
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav {
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
