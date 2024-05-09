@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <h1 class="text-center" style="font-weight: 600; color: #00FFFF">
+        ToDo
+        <small class="text-muted" style="color: #FFD700;font-weight: 600; font-size: 40px">List</small>
+    </h1>
+    <marquee behavior="scroll" direction="right" style="color: #FFD700; font-weight: bold;">Stay Organized, Stay Productive!</marquee>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inpNewTask" style="background-color: #c2efe0"
+                           aria-describedby="newTaskHelp" placeholder="Got tasks to tackle? Lets jot them down together!">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" id="btnAdd"
+                                style="background-color:blanchedalmond;color: #3EDBF0" disabled>
+                            <i class="fas fa-plus-square" style="color: #3EDBF0"></i> <span
+                                    style="color:#8A2BE2;">Add</span>
+                        </button>
+                        <button class="btn btn-info" id="btnSort"
+                                style="background-color:skyblue;color: #A9E44D" disabled>
+                            <i class="fas fa-sort-amount-down" style="color: #A9E44D"></i><span
+                                    style="color:#FF6347;">Sort</span>
+                        </button>
+                    </div>
+                </div>
+                <small id="newTaskHelp" class="form-text text-muted">A quick blurb about your to-do list task</small>
+            </div>
+        </div>
+        <ul class="row list-group m-2" id="ulTasks"></ul>
+    </div>
+</header>
+<footer style="text-align: center;background-color: grey;">
+    <br>contact<br>
+    <a href="https://github.com/Venkatyarramsetti"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/venkat-yarramsetti-756b91259/"><i class="fab fa-linkedin"></i></a>
+</footer>
+</body>
+</html>

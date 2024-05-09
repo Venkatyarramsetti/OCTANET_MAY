@@ -1,0 +1,83 @@
+#ulTasks li.done {
+            text-decoration: line-through;
+            background-color: #c2efe0;
+            color: #072c21;
+        }
+
+        #ulTasks li {
+            background-color: #1cb084;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-Regular.ttf);
+            font-style: normal;
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-SemiBold.ttf);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-Bold.ttf);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('https://plus.unsplash.com/premium_vector-1682306104192-17f97a2cadbb?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            padding-top: 25%;
+            padding-bottom: 25%;
+        }
+
+        body {
+            font-family: Montserrat;
+            font-weight: 100;
+        }
+
+        .btn {
+            font-weight: 600;
+        }
+
+        #doodleContainer {
+            padding-top: 1%;
+            background-color: #f0ceb7;
+            text-align: center;
+            padding-bottom: 0%;
+        }
+
+        #connect {
+            margin-right: auto;
+            color: #0e3528;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #doodleImg {
+            text-align: center;
+            background-size: 20%, 20%;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+        }
+
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group-append .btn {
+            margin-left: 10px;
+        }
+    

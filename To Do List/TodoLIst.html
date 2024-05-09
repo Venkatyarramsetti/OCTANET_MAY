@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+    <h1 class="text-center" style="font-weight: 600; color: #00FFFF">
+        ToDo
+        <small class="text-muted" style="color: #FFD700;font-weight: 600; font-size: 40px">List</small>
+    </h1>
+    <marquee behavior="scroll" direction="right" style="color: #FFD700; font-weight: bold;">Stay Organized, Stay Productive!</marquee>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #ulTasks li.done {
+            text-decoration: line-through;
+            background-color: #c2efe0;
+            color: #072c21;
+        }
+
+        #ulTasks li {
+            background-color: #1cb084;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-Regular.ttf);
+            font-style: normal;
+            font-weight: 100;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-SemiBold.ttf);
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url(Montserrat/Montserrat-Bold.ttf);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url('https://plus.unsplash.com/premium_vector-1682306104192-17f97a2cadbb?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            padding-top: 25%;
+            padding-bottom: 25%;
+        }
+
+        body {
+            font-family: Montserrat;
+            font-weight: 100;
+        }
+
+        .btn {
+            font-weight: 600;
+        }
+
+        #doodleContainer {
+            padding-top: 1%;
+            background-color: #f0ceb7;
+            text-align: center;
+            padding-bottom: 0%;
+        }
+
+        #connect {
+            margin-right: auto;
+            color: #0e3528;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #doodleImg {
+            text-align: center;
+            background-size: 20%, 20%;
+            background-repeat: no-repeat, no-repeat, no-repeat;
+        }
+
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group-append .btn {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="inpNewTask" style="background-color: #c2efe0"
+                           aria-describedby="newTaskHelp" placeholder="Got tasks to tackle? Lets jot them down together!">
+                    <div class="input-group-append">
+                        <button class="btn btn-success" id="btnAdd"
+                                style="background-color:blanchedalmond;color: #3EDBF0" disabled>
+                            <i class="fas fa-plus-square" style="color: #3EDBF0"></i> <span
+                                    style="color:#8A2BE2;">Add</span>
+                        </button>
+                        <button class="btn btn-info" id="btnSort"
+                                style="background-color:skyblue;color: #A9E44D" disabled>
+                            <i class="fas fa-sort-amount-down" style="color: #A9E44D"></i><span
+                                    style="color:#FF6347;">Sort</span>
+                        </button>
+                    </div>
+                </div>
+                <small id="newTaskHelp" class="form-text text-muted">A quick blurb about your to-do list task</small>
+            </div>
+        </div>
+        <ul class="row list-group m-2" id="ulTasks"></ul>
+    </div>
+</header>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        let inpNewTask = $("#inpNewTask");
+        let btnAdd = $("#btnAdd");
+        let btnSort = $("#btnSort");
+        let ulTasks = $("#ulTasks");
+
+        function addItem() {
+            let listItem = $('<li>', {'class': 'list-group-item'}).text(inpNewTask.val());
+
+            let toggleButton = $('<button>', {'class': 'btn btn-sm btn-outline-success float-right ml-2'})
+                .html('<i class="fas fa-check"></i>');
+
+            toggleButton.click(() => {
+                listItem.toggleClass('done');
+            });
+
+            let deleteButton = $('<button>', {'class': 'btn btn-sm btn-outline-danger float-right'})
+                .html('<i class="fas fa-trash"></i>');
+
+            deleteButton.click(() => {
+                listItem.remove();
+                toggleInputButtons();
+            });
+
+            listItem.append(toggleButton);
+            listItem.append(deleteButton);
+
+            ulTasks.append(listItem);
+
+            inpNewTask.val('');
+
+            toggleInputButtons();
+
+            // Update event handler for delete button on newly added item
+            deleteButton.click(() => {
+                listItem.remove();
+                toggleInputButtons();
+            });
+        }
+
+        function toggleInputButtons() {
+            btnAdd.prop('disabled', inpNewTask.val() === '');
+            btnSort.prop('disabled', ulTasks.children().length < 1);
+        }
+
+        inpNewTask.keypress((key) => {
+            if (key.which === 13) addItem();
+        });
+
+        inpNewTask.on('input', toggleInputButtons);
+
+        btnAdd.click(() => addItem());
+
+        btnSort.click(() => sortTask());
+
+        function sortTask() {
+            let listItems = $('#ulTasks > li').get();
+            let firstDoneItem = null;
+
+            listItems.forEach((item) => {
+                if ($(item).hasClass('done')) {
+                    firstDoneItem = item;
+                    return false;
+                }
+            });
+
+            if (firstDoneItem) {
+                $(firstDoneItem).remove();
+                ulTasks.append(firstDoneItem);
+            }
+        }
+    });
+</script>
+
+<footer style="text-align: center;background-color: grey;">
+    <br>contact<br>
+    <a href="https://github.com/Venkatyarramsetti"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/venkat-yarramsetti-756b91259/"><i class="fab fa-linkedin"></i></a>
+</footer>
+</body>
+</html>
